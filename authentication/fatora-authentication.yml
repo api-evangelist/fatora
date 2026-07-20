@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/authentication.php
+docs: https://fatora.io/api/authentication.php
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+  http_schemes:
+  - bearer
+  note: >-
+    Two coexisting mechanisms. Payment endpoints (checkout, refund, recurring, verify) take a
+    static merchant API key in an api_key header. Invoice/client/product endpoints require a
+    short-lived Bearer JWT that is first minted by calling the Authorization endpoint with the
+    api_key.
+schemes:
+- name: api_key
+  type: apiKey
+  in: header
+  parameter_name: api_key
+  description: >-
+    Static merchant API key sent in the api_key request header. Used for payment-related
+    endpoints (checkout, refund, recurring, verify). Found in the merchant dashboard under
+    Integration in the sidebar.
+  applies_to:
+  - POST /v1/payments/checkout
+  - refund
+  - recurring
+  - verify
+  sources:
+  - https://fatora.io/api/authentication.php
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  description: >-
+    Bearer JWT required for invoice, client and product endpoints. Obtained by POSTing to the
+    Authorization endpoint with the api_key header; the response returns a bearer_token JWT that
+    is then sent as Authorization Bearer on subsequent calls.
+  token_endpoint: https://api.fatora.io/v1/Authorization/Authorize
+  applies_to:
+  - invoices
+  - clients
+  - products
+  sources:
+  - https://fatora.io/api/authentication.php
