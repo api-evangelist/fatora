@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on fatora.io, api.fatora.io, app.fatora.io
+note: >-
+  No /.well-known/ discovery documents are published. All probed paths returned 404 (or a 302
+  login redirect on app.fatora.io, which is not a discovery document). Recorded as negative
+  evidence; no WellKnown/SecurityTxt pointer is emitted.
+hosts:
+- host: https://fatora.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://api.fatora.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://app.fatora.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 302}
+  - {path: /.well-known/oauth-authorization-server, status: 302}
+  - {path: /.well-known/api-catalog, status: 302}
+  - {path: /.well-known/ai-plugin.json, status: 404}

@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/ (authentication.php, standardCheckout.php, responseCode.php)
+summary: Cross-cutting request/response semantics for the Fatora REST API, harvested from the developer docs.
+authentication:
+  style: api_key header (payments) + Bearer JWT (invoices/clients/products)
+  api_key_header: api_key
+  token_endpoint: https://api.fatora.io/v1/Authorization/Authorize
+  ref: authentication/fatora-authentication.yml
+base_url: https://api.fatora.io/v1
+content_type:
+  request: application/json
+  note: >-
+    JSON payloads required; a non-JSON payload returns 415 Unsupported Media Type (confirmed by
+    live probe of POST /v1/payments/checkout).
+versioning:
+  scheme: uri-path
+  current: v1
+  example: https://api.fatora.io/v1/payments/checkout
+  ref: lifecycle/fatora-lifecycle.yml
+idempotency:
+  supported: false
+  note: >-
+    No documented idempotency-key header. The checkout order_id field is a caller-supplied unique
+    order identifier and a duplicate client returns 409 Conflict, but Fatora does not document a
+    replay-safe idempotency contract.
+pagination:
+  documented: false
+  note: >-
+    getAll endpoints exist for invoices/clients/products but no pagination parameters or response
+    envelope fields are documented in the public reference.
+error_envelope:
+  status_field: status
+  error_object: error
+  error_code_field: error.error_code
+  error_description_field: error.description
+  ref: errors/fatora-problem-types.yml
+localization:
+  language_param: language
+  language_values: [en, ar]
+  default_language: en
+currency:
+  param: currency
+  format: ISO 4217 three-letter codes (e.g. USD, QAR)
+  default: QAR
+rate_limiting:
+  documented: false
+  signal: 429 Too Many Requests returned when requests hit the API too quickly.

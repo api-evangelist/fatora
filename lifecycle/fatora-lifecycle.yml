@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://fatora.io/api/introduction.php
+  note: Version is carried in the URL path (https://api.fatora.io/v1/...).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_note: No public status page (status.fatora.io does not resolve) was found.
+deprecated_operations: []

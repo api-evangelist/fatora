@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+source: https://fatora.io/ar/security/
+url: https://fatora.io/ar/security/
+certifications:
+- PCI DSS
+evidence:
+- source: https://fatora.io/ar/security/
+  keywords:
+  - pci dss
+  - pci-dss

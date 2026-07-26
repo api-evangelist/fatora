@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/authentication.php
+docs: https://fatora.io/api/authentication.php
+summary: >-
+  Fatora publishes a shared test/demo merchant API key in its authentication documentation so
+  developers can exercise the API before wiring their own live merchant key. No separate sandbox
+  host is documented; test calls use the same base URL (https://api.fatora.io/v1) with the
+  published test key. No published test card numbers or test-clock tooling were found in the
+  developer documentation.
+base_url: https://api.fatora.io/v1
+test_credentials:
+- kind: api_key
+  header: api_key
+  value: E4B73FEE-F492-4607-A38D-852B0EBC91C9
+  note: >-
+    Test merchant API key published verbatim in Fatora's authentication docs, used both to call
+    payment endpoints directly and to mint a Bearer JWT via /v1/Authorization/Authorize.
+  source: https://fatora.io/api/authentication.php
+test_cards: []
+test_clocks: false
+notes:
+- Live vs test separation is by merchant API key (the merchant's own key from the dashboard
+  Integration section is the live key).
+- No dedicated sandbox subdomain, published test card numbers, or fixture/trigger tooling were
+  found in Fatora's public developer documentation as of this pass.

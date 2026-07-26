@@ -1,0 +1,55 @@
+# Fatora
+
+> Fatora is a Qatar-based online invoicing and payment platform (operated by MaktApp) serving 120,000+ merchants across Arabic-speaking / MENA markets. It offers invoicing, an online store, POS/cashier, payment links, and a card payment gateway, plus a REST API for checkout, tokenization, refunds, verification, and CRUD over invoices, clients, and products.
+
+## APIs
+
+- [Fatora REST API](https://fatora.io/api/): Hosted-checkout payments, tokenization, refunds, verification, and invoice/client/product management. Base URL https://api.fatora.io/v1.
+- [API Reference (Stoplight)](https://fatora-api.stoplight.io/docs/API-reference/ZG9jOjE-fatora-rest-api): Full REST reference.
+
+## Authentication
+
+- [Authentication](https://fatora.io/api/authentication.php): api_key header for payment endpoints; Bearer JWT (via https://api.fatora.io/v1/Authorization/Authorize) for invoice/client/product endpoints.
+
+## Docs
+
+- [Introduction / Getting Started](https://fatora.io/api/introduction.php)
+- [Standard Checkout](https://fatora.io/api/standardCheckout.php)
+- [Tokenization](https://fatora.io/api/tokenization.php)
+- [Refund](https://fatora.io/api/refund.php)
+- [Verify Payment](https://fatora.io/api/verify.php)
+- [Mobile Integration](https://fatora.io/api/mobileIntegration.php)
+- [Invoices](https://fatora.io/api/invoices.php)
+- [Clients](https://fatora.io/api/clients.php)
+- [Products](https://fatora.io/api/products.php)
+- [Response Codes](https://fatora.io/api/responseCode.php)
+- [Currency Support](https://fatora.io/api/currencySupport.php)
+- [SDKs](https://fatora.io/api/sdk.php)
+
+## SDKs
+
+- [Laravel (PHP)](https://github.com/MaktApp/Fatora-laravel)
+- [PHP](https://github.com/MaktApp/Fatora-PHP)
+- [.NET / C#](https://github.com/MaktApp/Fatora-csharp)
+- [JavaScript](https://github.com/MaktApp/Fatora-JavaScript)
+- [iOS (Swift)](https://github.com/MaktApp/Fatora-IOS)
+- [Android (Kotlin)](https://github.com/MaktApp/Fatora-Android)
+- [Ionic](https://github.com/MaktApp/Fatora-IONIC)
+
+## Repo artifacts
+
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/authentication/fatora-authentication.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/errors/fatora-problem-types.yml)
+- [API conventions](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/conventions/fatora-conventions.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/data-model/fatora-data-model.yml)
+- [Packages / SDKs](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/packages/fatora-packages.yml)
+- [Sandbox / test data](https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/sandbox/fatora-sandbox.yml)
+
+## More
+
+- [Pricing](https://fatora.io/ar/pricing/)
+- [Sign Up](https://app.fatora.io/register/)
+- [Help Center](https://fatora.io/ar/help-center/)
+- [Security (PCI DSS)](https://fatora.io/ar/security/)
+- [Blog](https://fatora.io/blog/)
+- [GitHub (MaktApp)](https://github.com/MaktApp)

@@ -1,0 +1,77 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/sdk.php + https://github.com/MaktApp
+note: >-
+  First-party Fatora client libraries and integration examples published under the MaktApp
+  GitHub organization (Fatora is operated by MaktApp). These are source repositories / examples
+  rather than registry-published packages; no npm/PyPI/Packagist/NuGet registry package was
+  found for Fatora, so install is by git clone / manual integration.
+packages:
+- language: php
+  registry: github
+  name: MaktApp/Fatora-laravel
+  url: https://github.com/MaktApp/Fatora-laravel
+  install: composer/git clone https://github.com/MaktApp/Fatora-laravel
+  official: true
+  description: Integrate a Laravel website with the Fatora payment gateway.
+- language: php
+  registry: github
+  name: MaktApp/Fatora-PHP
+  url: https://github.com/MaktApp/Fatora-PHP
+  install: git clone https://github.com/MaktApp/Fatora-PHP
+  official: true
+  description: PHP integration library / example for Fatora.
+- language: csharp
+  registry: github
+  name: MaktApp/Fatora-csharp
+  url: https://github.com/MaktApp/Fatora-csharp
+  install: git clone https://github.com/MaktApp/Fatora-csharp
+  official: true
+  description: ASP.NET / C# integration library for Fatora.
+- language: javascript
+  registry: github
+  name: MaktApp/Fatora-JavaScript
+  url: https://github.com/MaktApp/Fatora-JavaScript
+  install: git clone https://github.com/MaktApp/Fatora-JavaScript
+  official: true
+  description: JavaScript integration example for Fatora.
+- language: swift
+  registry: github
+  name: MaktApp/Fatora-IOS
+  url: https://github.com/MaktApp/Fatora-IOS
+  install: git clone https://github.com/MaktApp/Fatora-IOS
+  official: true
+  description: Integrate an iOS app with the Fatora payment gateway.
+- language: kotlin
+  registry: github
+  name: MaktApp/Fatora-Android
+  url: https://github.com/MaktApp/Fatora-Android
+  install: git clone https://github.com/MaktApp/Fatora-Android
+  official: true
+  description: Integrate an Android app with the Fatora payment gateway.
+- language: typescript
+  registry: github
+  name: MaktApp/Fatora-IONIC
+  url: https://github.com/MaktApp/Fatora-IONIC
+  install: git clone https://github.com/MaktApp/Fatora-IONIC
+  official: true
+  description: Ionic integration for the Fatora payment gateway.
+plugins:
+- platform: WooCommerce (WordPress)
+  docs: https://fatora.io/api/wordpress.php
+  official: true
+- platform: Magento
+  docs: https://fatora.io/api/magento.php
+  official: true
+- platform: OpenCart
+  docs: https://fatora.io/api/opencart.php
+  official: true
+- platform: PrestaShop
+  docs: https://fatora.io/api/prestashop.php
+  official: true
+- platform: Shopify
+  docs: https://fatora.io/api/shopify.php
+  official: true
+- platform: Wix
+  docs: https://fatora.io/api/wix.php
+  official: true

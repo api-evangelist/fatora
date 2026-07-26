@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: derived
+source: https://fatora.io/api/ (invoices, clients, products, payments/checkout operations)
+note: >-
+  Entity-relationship graph derived from Fatora's documented REST resources and the checkout
+  request shape. No OpenAPI is published, so entities and fields are inferred from the developer
+  reference pages, not a machine-readable schema.
+entities:
+- name: Client
+  description: A customer/payer record owned by the merchant.
+  docs: https://fatora.io/api/clients.php
+  key_fields: [name, phone, email]
+- name: Product
+  description: A catalog item that can appear on invoices.
+  docs: https://fatora.io/api/products.php
+- name: Invoice
+  description: A billing document issued to a client, composed of product line items.
+  docs: https://fatora.io/api/invoices.php
+- name: Payment
+  description: A checkout/payment attempt against an order, producing a hosted checkout_url.
+  docs: https://fatora.io/api/standardCheckout.php
+  key_fields: [amount, currency, order_id, success_url, failure_url]
+- name: CardToken
+  description: A saved card token created when save_token is set on checkout, reused for tokenized payments.
+  docs: https://fatora.io/api/tokenization.php
+relationships:
+- from: Invoice
+  to: Client
+  type: belongs_to
+  via: client
+- from: Invoice
+  to: Product
+  type: has_many
+  via: items
+- from: Payment
+  to: Client
+  type: belongs_to
+  via: client
+- from: Payment
+  to: Order
+  type: belongs_to
+  via: order_id
+- from: CardToken
+  to: Client
+  type: belongs_to
+  via: client

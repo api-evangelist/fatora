@@ -1,25 +1,142 @@
 aid: fatora
 name: Fatora
-description: Fatora is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Fatora is a Qatar-based online invoicing and payment platform operated by MaktApp,
+  serving more than 120,000 merchants across Arabic-speaking markets in the Gulf and
+  wider MENA region. It combines professional invoicing, a hosted online store, POS/cashier
+  tooling, WhatsApp/SMS/email payment links, and a card payment gateway (routing through
+  processors such as Stripe, TAP and TESS) behind a single merchant account. Fatora publishes
+  a REST API at api.fatora.io/v1 for programmatic checkout, tokenization, refunds and payment
+  verification, plus full CRUD over invoices, clients and products, and AI helpers for product
+  content. First-party SDKs are provided for PHP, Laravel, .NET, JavaScript, React, iOS, Android
+  and Ionic, alongside ready-made plugins for WooCommerce, Magento, OpenCart, PrestaShop, Shopify
+  and Wix. This profile was enriched from Fatora's public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/fatora/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profile
+x-tier-reason: portfolio-lead-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://fatora.io/assets/img/logo/fatora-logo.png
 tags:
-- Company
-apis: []
+- Payments
+- Invoicing
+- Payment Gateway
+- E-commerce
+- Billing
+- Fintech
+- Checkout
+- MENA
+- Qatar
+- SaaS
+apis:
+- name: Fatora REST API
+  description: >-
+    Fatora's REST API for hosted-checkout payment collection, card tokenization, refunds and
+    payment verification, plus CRUD over invoices, clients and products and AI content helpers.
+    Payment endpoints authenticate with an api_key header; invoice/client/product endpoints use
+    a Bearer JWT obtained from the Authorization endpoint.
+  humanURL: https://fatora.io/api/
+  baseURL: https://api.fatora.io/v1
+  tags:
+  - Payments
+  - Invoicing
+  - Checkout
+  - Refunds
+  - Tokenization
+  properties:
+  - type: Documentation
+    url: https://fatora.io/api/
+  - type: APIReference
+    url: https://fatora-api.stoplight.io/docs/API-reference/ZG9jOjE-fatora-rest-api
+  - type: Authentication
+    url: authentication/fatora-authentication.yml
+  - type: Sandbox
+    url: sandbox/fatora-sandbox.yml
+  - type: ErrorCatalog
+    url: errors/fatora-problem-types.yml
+  - type: Conventions
+    url: conventions/fatora-conventions.yml
+  - type: DataModel
+    url: data-model/fatora-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/fatora-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/fatora-trust-center.yml
+- type: Compliance
+  url: https://fatora.io/ar/security/
 - type: Website
-  url: https://maktapp.com
+  url: https://fatora.io
+- type: DeveloperPortal
+  url: https://fatora.io/api/
+- type: Documentation
+  url: https://fatora.io/api/
+- type: APIReference
+  url: https://fatora-api.stoplight.io/docs/API-reference/ZG9jOjE-fatora-rest-api
+- type: GettingStarted
+  url: https://fatora.io/api/introduction.php
+- type: Authentication
+  url: authentication/fatora-authentication.yml
+- type: SDKs
+  url: packages/fatora-packages.yml
+- type: Packages
+  url: packages/fatora-packages.yml
+- type: Sandbox
+  url: sandbox/fatora-sandbox.yml
+- type: ErrorCatalog
+  url: errors/fatora-problem-types.yml
+- type: Conventions
+  url: conventions/fatora-conventions.yml
+- type: DataModel
+  url: data-model/fatora-data-model.yml
+- type: Lifecycle
+  url: lifecycle/fatora-lifecycle.yml
+- type: DomainSecurity
+  url: security/fatora-domain-security.yml
+- type: LLMsTxt
+  url: llms/fatora-llms.txt
+- type: GitHubOrganization
+  url: https://github.com/MaktApp
+- type: Pricing
+  url: https://fatora.io/ar/pricing/
+- type: SignUp
+  url: https://app.fatora.io/register/
+- type: Login
+  url: https://app.fatora.io/login/
+- type: Support
+  url: https://fatora.io/ar/help-center/
+- type: HelpCenter
+  url: https://fatora.io/ar/help-center/
+- type: Blog
+  url: https://fatora.io/blog/
+- type: TermsOfService
+  url: https://fatora.io/ar/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://fatora.io/en/privacy-en/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,70 @@
+generated: '2026-07-19'
+method: searched
+source: https://fatora.io/api/responseCode.php
+format: custom
+envelope:
+  description: >-
+    Fatora responses carry a top-level status string. Success responses include a result object
+    (e.g. result.checkout_url on checkout). Failure responses include an error object with
+    error.error_code (numeric) and error.description (human-readable explanation).
+  success_fields:
+  - status
+  - result
+  failure_fields:
+  - status
+  - error.error_code
+  - error.description
+  docs: https://fatora.io/api/standardCheckout.php
+problems:
+- status: 200
+  title: OK
+  description: The request has succeeded.
+  class: success
+- status: 201
+  title: Created
+  description: The request has succeeded and has led to the creation of a resource (invoice, client, item).
+  class: success
+- status: 204
+  title: No Content
+  description: The request has succeeded and the object was deleted successfully.
+  class: success
+- status: 400
+  title: Bad Request
+  description: The request was unacceptable, often due to a missing required parameter.
+  class: client-error
+- status: 401
+  title: Unauthorized
+  description: Merchant API key isn't valid.
+  class: client-error
+- status: 403
+  title: Forbidden
+  description: The server understood the request but refuses to authorize it (e.g. inactive API key).
+  class: client-error
+- status: 404
+  title: Not Found
+  description: The specified resource does not exist.
+  class: client-error
+- status: 406
+  title: Not Acceptable
+  description: Server cannot return a response in the requested media type (e.g. XML vs JSON mismatch).
+  class: client-error
+- status: 409
+  title: Conflict
+  description: Adding a new client with the same data as an existing client.
+  class: client-error
+- status: 415
+  title: Unsupported Media Type
+  description: The server refuses the request because the payload format is unsupported.
+  class: client-error
+- status: 422
+  title: Unprocessable Entity
+  description: Request semantically incorrect or failed business validation.
+  class: client-error
+- status: 429
+  title: Too Many Requests
+  description: Too many requests hit the API too quickly.
+  class: client-error
+- status: 500
+  title: Internal Server Error
+  description: Something went wrong on Fatora's end (rare).
+  class: server-error
