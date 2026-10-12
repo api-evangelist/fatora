@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/fatora/integrations
+- https://n8n.io/integrations/fatora/
+- https://composio.dev/toolkits/fatora
+- https://monid.ai/tools/fatora
+checked:
+- https://composio.dev/toolkits/fatora
+- https://monid.ai/tools/fatora
+- https://n8n.io/integrations/fatora/
+- https://zapier.com/apps/fatora/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
